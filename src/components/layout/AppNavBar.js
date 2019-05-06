@@ -16,6 +16,13 @@ class AppNavBar extends Component {
             data-target="#navbarMain">
                 <span className="navbar-toggler-icon"></span>
           </button>
+            <ul className="navbar-nav mr-auto">
+                <li className="nav-item">
+                    <Link to="/" className="nav-link">
+                        Dashboard
+                    </Link>
+                </li>
+            </ul>
           <div className="collapse navbar-collapse" id="navbarMain"></div>
         </div>
       </nav>
