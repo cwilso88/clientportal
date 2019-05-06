@@ -3,10 +3,12 @@ import Clients from '../clients/Clients';
 import Sidebar from '../layout/Sidebar';
 
 
-function Dashboard() {
+export default () => {
   return (
-    <div>
-      <h1>Dashboard</h1>
+    <div className="row">
+      <div className="col-md-10">
+
+      </div>
     </div>
   )
 }
