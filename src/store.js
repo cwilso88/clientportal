@@ -39,6 +39,14 @@ const rrfConfig = {
     const rootReducer = combineReducers({
         firebase: firebaseReducer,
         firestore: firestoreReducer // <- needed if using firestore
-    })
+    });
+
+    // Create initial state
+    const initialState = {};
+
+    // Create store
+    const store = createStoreWithFirebase(rootReducer, initialState, compose(reactReduxFirebase(firebase),
+        window.__REDUX_DEVTOOLS_EXTENSION__&& window.__REDUX_DEVTOOLS_EXTENSION__()
+    ));
   
 
