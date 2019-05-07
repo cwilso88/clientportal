@@ -10,7 +10,16 @@ class Clients extends Component {
       email: 'amandam@gmail.com',
       phone: '770-765-0909',
       balance: '150'
-    }];
+    },
+    {
+      id: '9894',
+      firstName: 'Ron',
+      lastName: 'Smith',
+      email: 'ronsmith@gmail.com',
+      phone: '404-765-0909',
+      balance: '50'
+    }
+  ];
 
     if(clients){
       return (
@@ -40,7 +49,7 @@ class Clients extends Component {
                 <tr key={client.id}>
                   <td>{client.firstName} {client.lastName}</td>
                   <td>{client.email}</td>
-                  <td>{client.balance}</td>
+                  <td>${parseFloat(client.balance).toFixed(2)}</td>
                   <td>
                     <Link to={`/client/${client.id}`} className="btn btn-secondary btn-sm">
                       <i className="fas fa-arrow-circle-right">Details</i>
