@@ -1,11 +1,14 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { Provider } from 'react-redux';
+import store from './store';
 import AppNavbar from './components/layout/AppNavBar';
 import Dashboard from './components/layout/Dashboard';
 import './App.css';
 
 function App() {
   return (
+    <Provider store={store}>
     <Router>
     <div className="App">
       <AppNavbar />
@@ -17,6 +20,7 @@ function App() {
       </div>
     </div>
     </Router>
+    </Provider>
   );
 }
 
