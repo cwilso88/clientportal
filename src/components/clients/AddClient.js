@@ -10,6 +10,9 @@ class AddClient extends Component {
         balance: ''
     }
 
+    onChange = (e) => this.setState({ [e.target.name]: e.target.value });
+    
+
   render() {
     return (
       <div>
@@ -34,6 +37,8 @@ class AddClient extends Component {
                             name="firstName"
                             minLength="2"
                             required
+                            onChange={this.onChange}
+                            value={this.state.firstName}
                         />
                     </div>
                 </form>
