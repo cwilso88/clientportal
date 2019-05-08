@@ -11,8 +11,8 @@ class Clients extends Component {
     totalOwed: null
   }
 
-  static getDerivedStateFromProps(props, state) {
-    const { clients } = this.props;
+   static getDerivedStateFromProps(props, state) {
+    const { clients } = props;
 
     if(clients) {
       // Add balances
@@ -42,6 +42,7 @@ class Clients extends Component {
             <div className="col-md-6">
               <h5 className="text-right text-secondary">Total Owed {''}
               <span className="text-primary">
+                ${parseFloat(totalOwed).toFixed(2)}
               </span></h5>
             </div>
           </div>
