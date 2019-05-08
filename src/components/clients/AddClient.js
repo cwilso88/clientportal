@@ -2,6 +2,14 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
 class AddClient extends Component {
+    state = {
+        firstName: '',
+        lastName: '',
+        email: '', 
+        phone: '', 
+        balance: ''
+    }
+
   render() {
     return (
       <div>
