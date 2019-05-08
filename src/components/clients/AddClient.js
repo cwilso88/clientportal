@@ -13,6 +13,24 @@ class AddClient extends Component {
                 </Link>
             </div>
         </div>
+        
+        <div className="card">
+            <div className="card-header">Add Client</div>
+            <div className="card-body">
+                <form>
+                    <div className="form-group">
+                        <label htmlFor="firstName">First Name</label>
+                        <input 
+                            type="text" 
+                            className="form-control"
+                            name="firstName"
+                            minLength="2"
+                            required
+                        />
+                    </div>
+                </form>
+            </div>
+        </div>
       </div>
     )
   }
