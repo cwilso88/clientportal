@@ -15,9 +15,11 @@ class ClientDetails extends Component {
       if(client) {
         return (
             <div>
-              <h1>Hello {client.firstName}</h1>
+              <h1>Hello {client.firstName} {client.lastName}</h1>
             </div>
         );
+    } else {
+        return <Spinner />
     }
   }
 }

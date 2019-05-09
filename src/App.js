@@ -11,8 +11,6 @@ import ClientDetails from './components/clients/ClientDetails';
 import './App.css';
 
 function App() {
-
-  const { client } = this.props;
   return (
     <Provider store={store}>
     <Router>
@@ -22,7 +20,7 @@ function App() {
         <Switch>
           <Route exact path="/" component={Dashboard}></Route>
           <Route exact path="/client/add" component={AddClient}></Route>
-          <Route exact path={`/client/${client.id}`} component={ClientDetails}></Route>
+          <Route exact path="/client/:id" component={ClientDetails}></Route>
           
         </Switch>
       </div>
