@@ -18,6 +18,24 @@ class EditClient extends Component {
         this.balanceInput = React.createRef();
     }
 
+    onSubmit = e => {
+        e.preventDefault();
+
+        const { client, firestore, history } = this.props;
+
+        //Updated Client
+        const updClient = {
+            firstName: this.firstNameInput.current.value,
+            lastName: this.lastNameInput.current.value,
+            email: this.emailInput.current.value,
+            phone: this.phoneInput.current.value,
+            balance: this.balanceInput.current.value === '' ? 0 : this.balanceInput.current.value 
+        }
+
+        firestore.update({ collection: 'clients', doc: client.id }, updClient)
+            .then(history.push('/'));
+
+    }
   render() {
       const { client } = this.props;
 
