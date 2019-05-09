@@ -5,6 +5,7 @@ import { compose } from 'redux';
 import { connect } from 'react-redux';
 import { firestoreConnect } from 'react-redux-firebase';
 import Spinner from '../layout/Spinner';
+import classnames from 'classnames';
 
 
 
@@ -15,7 +16,7 @@ class ClientDetails extends Component {
       if(client) {
         return (
             <div>
-              <div className="ro">
+              <div className="row">
                   <div className="col-md-6">
                       <Link to="/" className="btn btn-link">
                           <i className="fas fa-arrow-circle-left"></i> Back to Dashboard
@@ -30,6 +31,31 @@ class ClientDetails extends Component {
                       </div>
                   </div>
               </div>
+              <hr/>
+              <div className="card">
+                  <h3 className="card-header">
+                      {client.firstName} {client.lastName}
+                  </h3>
+                  <div className="card-body">
+                      <div className="row">
+                          <div className="col-md-8 col-sm-6">
+                            <h4>Client ID: {''} <span className="text-secondary">{client.id}</span></h4>
+                          </div>
+                          <div className="col-md-4 col-sm-6">
+                            <h3 className="pull-right">
+                              Balance: <span>${parseFloat(client.balance).toFixed(2)}</span>
+                            </h3>
+                            {/* @todo - balanceform */}
+                          </div>
+                      </div>
+
+                      <hr/>
+                      <ul className="list-group">
+                          <li className="list-group-item">Contact Email: {client.email}</li>
+                          <li className="list-group-item">Contact Phone: {client.phone}</li>
+                      </ul>
+                  </div>
+              </div>
             </div>
         );
     } else {
@@ -39,6 +65,7 @@ class ClientDetails extends Component {
 }
 
 ClientDetails.propTypes = {
+    firestore: PropTypes.object.isRequired,
     client: PropTypes.object
 }
 
