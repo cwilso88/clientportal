@@ -8,6 +8,16 @@ import Spinner from '../layout/Spinner';
 
 
 class EditClient extends Component {
+    constructor() {
+        super();
+        // Create refs
+        this.firstNameInput = React.createRef();
+        this.lastNameInput = React.createRef();
+        this.emailInput = React.createRef();
+        this.phoneInput = React.createRef();
+        this.balanceInput = React.createRef();
+    }
+
   render() {
       const { client } = this.props;
 
