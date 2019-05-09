@@ -7,12 +7,11 @@ import { firestoreConnect } from 'react-redux-firebase';
 import Spinner from '../layout/Spinner';
 
 
-
 class EditClient extends Component {
   render() {
     return (
       <div>
-        edit
+        <h1>Hello World</h1>
       </div>
     )
   }
