@@ -37,7 +37,8 @@ class EditClient extends Component {
                             minLength="2"
                             required
                             onChange={this.onChange}
-                            value={this.state.firstName}
+                            ref={this.firstNameInput}
+                            defaultValue={client.firstName}
                         />
                     </div>
                     <div className="form-group">
@@ -49,7 +50,8 @@ class EditClient extends Component {
                             minLength="2"
                             required
                             onChange={this.onChange}
-                            value={this.state.lastName}
+                            ref={this.lastNameInput}
+                            defaultValue={client.lastName}
                         />
                     </div>
                     <div className="form-group">
@@ -59,7 +61,8 @@ class EditClient extends Component {
                             className="form-control"
                             name="email"
                             onChange={this.onChange}
-                            value={this.state.email}
+                            ref={this.emailInput}
+                            defaultValue={client.email}
                         />
                     </div>
                     <div className="form-group">
@@ -71,7 +74,8 @@ class EditClient extends Component {
                             minLength="10"
                             required
                             onChange={this.onChange}
-                            value={this.state.phone}
+                            ref={this.phoneInput}
+                            defaultValue={client.phone}
                         />
                     </div>
                     <div className="form-group">
@@ -81,7 +85,8 @@ class EditClient extends Component {
                             className="form-control"
                             name="balance"
                             onChange={this.onChange}
-                            value={this.state.balance}
+                            ref={this.balanceInput}
+                            defaultValue={client.balance}
                         />
                     </div>
 
