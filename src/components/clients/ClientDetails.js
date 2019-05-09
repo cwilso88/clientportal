@@ -15,7 +15,14 @@ class ClientDetails extends Component {
         balanceUpdateAmount: ''
     }
 
+    balanceSubmit = e => {
+        e.preventDefault();
+
+        
+    }
+
     onChange = e => this.setState({[e.target.name]: e.target.value});
+
 
   render() {
       const { client } = this.props;
@@ -93,7 +100,7 @@ class ClientDetails extends Component {
                                   </a>
                               </small>
                             </h3>
-                            {/* @todo - balanceform */}
+                            {balanceForm}
                           </div>
                       </div>
 
