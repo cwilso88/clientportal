@@ -18,6 +18,16 @@ class ClientDetails extends Component {
     balanceSubmit = e => {
         e.preventDefault();
 
+        const { client, firestore } = this.props;
+        const { balanceUpdateAmount } = this.state;
+
+        const clientUpdate = {
+            balance: parseFloat(balanceUpdateAmount)
+        }
+
+        //Update in firestore
+        firestore.update({collection: 'clients', doc: client.id}, clientUpdate);
+
         
     }
 
@@ -35,7 +45,7 @@ class ClientDetails extends Component {
                 <form onSubmit={this.balanceSubmit}>
                     <div className="input-group">
                         <input 
-                            type="text" 
+                            type="number" 
                             name="balanceUpdateAmount"
                             className="form-control"
                             value={balanceUpdateAmount}
@@ -48,7 +58,6 @@ class ClientDetails extends Component {
                                 className="btn btn-outline-dark"
                                 value="Update"
                             />
-
                         </div>
                     </div>
                 </form>
