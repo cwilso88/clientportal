@@ -15,7 +15,21 @@ class ClientDetails extends Component {
       if(client) {
         return (
             <div>
-              <h1>Hello {client.firstName} {client.lastName}</h1>
+              <div className="ro">
+                  <div className="col-md-6">
+                      <Link to="/" className="btn btn-link">
+                          <i className="fas fa-arrow-circle-left"></i> Back to Dashboard
+                      </Link>
+                  </div>
+                  <div className="col-md-6">
+                      <div className="btn-group float-right">
+                          <Link to={`/client/edit/${client.id}`} className="btn btn-dark">
+                              Edit
+                          </Link>
+                          <button className="btn btn-danger"> Delete </button>
+                      </div>
+                  </div>
+              </div>
             </div>
         );
     } else {
@@ -25,7 +39,7 @@ class ClientDetails extends Component {
 }
 
 ClientDetails.propTypes = {
-    client: PropTypes.object.isRequired
+    client: PropTypes.object
 }
 
 export default compose(
