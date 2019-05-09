@@ -10,8 +10,26 @@ import classnames from 'classnames';
 
 
 class ClientDetails extends Component {
+    state = {
+        showBalanceUpdate: false,
+        balanceUpdateAmount: ''
+    }
+
   render() {
       const { client } = this.props;
+      const { showBalanceUpdate, balanceUpdateAmount } = this.state;
+
+      let balanceForm = '';
+      // If balance form should display
+      if(showBalanceUpdate) {
+            balanceForm = (
+                <form>
+                    
+                </form>
+            )
+      } else {
+          balanceForm = null;
+      }
 
       if(client) {
         return (
@@ -47,6 +65,14 @@ class ClientDetails extends Component {
                                   'text-danger': client.balance > 0,
                                   'text-success': client.balance === 0,
                               })}>${parseFloat(client.balance).toFixed(2)}</span>
+                              {' '}
+                              <small>
+                                  <a href="#!" onClick={() => this.setState({
+                                   showBalanceUpdate: !this.state.showBalanceUpdate   
+                                  })}> 
+                                      <i className="fas fa-pencil-alt"></i>
+                                  </a>
+                              </small>
                             </h3>
                             {/* @todo - balanceform */}
                           </div>
