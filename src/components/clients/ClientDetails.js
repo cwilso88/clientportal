@@ -43,7 +43,10 @@ class ClientDetails extends Component {
                           </div>
                           <div className="col-md-4 col-sm-6">
                             <h3 className="pull-right">
-                              Balance: <span>${parseFloat(client.balance).toFixed(2)}</span>
+                              Balance: <span className={classnames({
+                                  'text-danger': client.balance > 0,
+                                  'text-success': client.balance === 0,
+                              })}>${parseFloat(client.balance).toFixed(2)}</span>
                             </h3>
                             {/* @todo - balanceform */}
                           </div>
