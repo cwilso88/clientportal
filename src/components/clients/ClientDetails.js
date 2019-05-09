@@ -15,6 +15,8 @@ class ClientDetails extends Component {
         balanceUpdateAmount: ''
     }
 
+    onChange = e => this.setState({[e.target.name]: e.target.value});
+
   render() {
       const { client } = this.props;
       const { showBalanceUpdate, balanceUpdateAmount } = this.state;
@@ -23,8 +25,25 @@ class ClientDetails extends Component {
       // If balance form should display
       if(showBalanceUpdate) {
             balanceForm = (
-                <form>
-                    
+                <form onSubmit={this.balanceSubmit}>
+                    <div className="input-group">
+                        <input 
+                            type="text" 
+                            name="balanceUpdateAmount"
+                            className="form-control"
+                            value={balanceUpdateAmount}
+                            placeholder="Add New Balance"
+                            onChange={this.onChange}
+                        />
+                        <div className="input-group-append">
+                            <input 
+                                type="submit" 
+                                className="btn btn-outline-dark"
+                                value="Update"
+                            />
+
+                        </div>
+                    </div>
                 </form>
             )
       } else {
