@@ -6,6 +6,12 @@ import { firebaseConnect } from 'react-redux-firebase';
 
 
 class Login extends Component {
+
+    state = {
+        email: '',
+        password: ''
+    }
+
   render() {
     return (
       <div className="row">
@@ -31,7 +37,7 @@ class Login extends Component {
                             />
                             <label htmlFor="password">Password</label>
                             <input 
-                                type="text" 
+                                type="password" 
                                 className="form-control" 
                                 name="password"
                                 required
