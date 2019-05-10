@@ -15,9 +15,22 @@ class Login extends Component {
                     <h1 className="text-center pb-4 pt-3">
                         <span className="text-primary">
                             <i className="fas fa-lock"></i>
-                            Login
+                            {' '}Login
                         </span>
                     </h1>
+                    <form>
+                        <div className="form-group">
+                            <label htmlFor="email">Email</label>
+                            <input 
+                                type="text" 
+                                className="form-control" 
+                                name="email"
+                                required
+                                value={this.state.email}
+                                onChange={this.onChange}
+                            />
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
