@@ -26,7 +26,16 @@ class Login extends Component {
                                 className="form-control" 
                                 name="email"
                                 required
-                                value={this.state.email}
+                                //value={this.state.email}
+                                onChange={this.onChange}
+                            />
+                            <label htmlFor="password">Password</label>
+                            <input 
+                                type="text" 
+                                className="form-control" 
+                                name="password"
+                                required
+                                //value={this.state.password}
                                 onChange={this.onChange}
                             />
                         </div>
