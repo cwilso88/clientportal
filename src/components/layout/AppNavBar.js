@@ -12,7 +12,7 @@ class AppNavBar extends Component {
   }
 
 static getDerivedStateFromProps(props, state) {
-  const { auth } = this. props;
+  const { auth } = props;
 
   if(auth.uid) {
     return { isAuthenticated: true }
@@ -22,6 +22,8 @@ static getDerivedStateFromProps(props, state) {
 }
 
   render() {
+    const { isAuthenticated } = this.state;
+    const { auth } = this.props;
     return (
       <nav className="navbar navbar-expand-md navbar-dark bg-primary mb-4">
           <div className="container">
@@ -35,14 +37,31 @@ static getDerivedStateFromProps(props, state) {
             data-target="#navbarMain">
                 <span className="navbar-toggler-icon"></span>
           </button>
+          <div className="collapse navbar-collapse" id="navbarMain">
             <ul className="navbar-nav mr-auto">
-                <li className="nav-item">
+            {isAuthenticated ? (
+              <li className="nav-item">
                     <Link to="/" className="nav-link">
                         Dashboard
                     </Link>
-                </li>
+              </li>
+            ) : null}
             </ul>
-          <div className="collapse navbar-collapse" id="navbarMain"></div>
+            {isAuthenticated ? (
+              <ul className="navbar-nav ml-auto">
+                    <li className="nav-item">
+                      <a href="#!" className="nav-link">
+                        { auth.email }
+                      </a>
+                    </li>
+                    <li className="nav-item">
+                      <a onClick={this.onLogoutClick} href="#!" className="nav-link">
+                      Logout
+                      </a>
+                    </li>
+              </ul>
+            ) : null}
+          </div>
         </div>
       </nav>
     )
@@ -59,4 +78,4 @@ export default compose(firebaseConnect(),
   connect((state, props) => ({
   auth: state.firebase.auth
   }))
-);
+)(AppNavBar);
