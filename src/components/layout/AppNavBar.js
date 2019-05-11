@@ -1,5 +1,10 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
+import { compose } from 'redux';
+import { connect } from 'react-redux';
+import { firebaseConnect } from 'react-redux-firebase';
+
 
 class AppNavBar extends Component {
   render() {
@@ -30,5 +35,14 @@ class AppNavBar extends Component {
   }
 }
 
+AppNavBar.propTypes = {
+  firebase: PropTypes.object.isRequired,
+  auth: PropTypes.object.isRequired
+}
 
-export default AppNavBar;
+
+export default compose(firebaseConnect(),
+  connect((state, props) => ({
+  auth: state.firebase.auth
+  }))
+);
