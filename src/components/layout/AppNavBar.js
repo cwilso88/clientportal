@@ -7,6 +7,20 @@ import { firebaseConnect } from 'react-redux-firebase';
 
 
 class AppNavBar extends Component {
+  state = {
+    isAuthenticated: false
+  }
+
+static getDerivedStateFromProps(props, state) {
+  const { auth } = this. props;
+
+  if(auth.uid) {
+    return { isAuthenticated: true }
+  } else {
+    return { isAuthenticated: false }
+  }
+}
+
   render() {
     return (
       <nav className="navbar navbar-expand-md navbar-dark bg-primary mb-4">
