@@ -1,5 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import  { UserIsAuthenticated, UserIsNotAuthenticated } from './helpers/auth';
+
 import { Provider } from 'react-redux';
 import store from './store';
 import AppNavbar from './components/layout/AppNavBar';
@@ -20,7 +22,7 @@ function App() {
       <AppNavbar />
       <div className="container">
         <Switch>
-          <Route exact path="/" component={Dashboard}></Route>
+          <Route exact path="/" component={UserIsAuthenticated(Dashboard)}></Route>
           <Route exact path="/client/add" component={AddClient}></Route>
           <Route exact path="/client/edit/:id" component={EditClient}></Route>
           <Route exact path="/client/:id" component={ClientDetails}></Route>
