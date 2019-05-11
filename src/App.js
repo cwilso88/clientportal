@@ -23,10 +23,10 @@ function App() {
       <div className="container">
         <Switch>
           <Route exact path="/" component={UserIsAuthenticated(Dashboard)}></Route>
-          <Route exact path="/client/add" component={AddClient}></Route>
-          <Route exact path="/client/edit/:id" component={EditClient}></Route>
-          <Route exact path="/client/:id" component={ClientDetails}></Route>
-          <Route exact path="/login" component={Login}></Route>
+          <Route exact path="/client/add" component={UserIsAuthenticated(AddClient)}></Route>
+          <Route exact path="/client/edit/:id" component={UserIsAuthenticated(EditClient)}></Route>
+          <Route exact path="/client/:id" component={UserIsAuthenticated(ClientDetails)}></Route>
+          <Route exact path="/login" component={UserIsNotAuthenticated(Login)}></Route>
         </Switch>
       </div>
     </div>
