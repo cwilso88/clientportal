@@ -41,7 +41,8 @@ const rrfConfig = {
     // Add firebase to reducers
     const rootReducer = combineReducers({
         firebase: firebaseReducer,
-        firestore: firestoreReducer // <- needed if using firestore
+        firestore: firestoreReducer,
+        notify: notifyReducer // <- needed if using firestore
     });
 
     // Create initial state
