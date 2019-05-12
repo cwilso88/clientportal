@@ -18,6 +18,19 @@ export default function(state = initialState) {
             disableBalanceOnAdd: !disableBalanceOnAdd
         };
     }
+    switch(action.type) {
+        case DISABLE_BALANCE_ON_EDIT:
+        return {
+            ...state,
+            disableBalanceOnEdit: !disableBalanceOnEdit
+        };
+    switch(action.type) {
+        case ALLOW_REGISTRATION:
+        return {
+            ...state,
+            allowRegistration: !allowRegistration
+        };
+    }
   return (
     <div>
       
