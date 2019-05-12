@@ -88,5 +88,7 @@ export default compose(
     firebaseConnect(),
     connect((state, props) => ({
         notify: state.notify
-    }))
+        }), 
+    {notifyUser}
+    )
 )(Login);
