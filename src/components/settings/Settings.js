@@ -17,4 +17,17 @@ class Settings extends Component {
   }
 }
 
-export default Settings;
+
+Settings.propTypes = {
+    settings: PropTypes.object.isRequired,
+    setDisableBalanceOnAdd: PropTypes.func.isRequired,
+    setDisableBalanceOnEdit: PropTypes.func.isRequired,
+    setAllowRegistration: PropTypes.func.isRequired
+}
+
+export default connect((state, props) => ({
+    auth: state.firebase.auth,
+    settings: state.settings
+}), 
+{ setAllowRegistration, setDisableBalanceOnAdd, setDisableBalanceOnEdit }
+)(Settings);
