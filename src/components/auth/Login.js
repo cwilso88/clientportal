@@ -33,11 +33,15 @@ class Login extends Component {
     }
 
   render() {
+      const { message, messageType } = this.props.notify;
     return (
       <div className="row">
         <div className="col-md-6 mx-auto">
             <div className="card">
                 <div className="card-body">
+                    {message ? (
+                        <Alert message={message} messageType={messageType}/>
+                        ) : null}
                     <h1 className="text-center pb-4 pt-3">
                         <span className="text-primary">
                             <i className="fas fa-lock"></i>
