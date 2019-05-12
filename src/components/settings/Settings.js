@@ -35,7 +35,7 @@ render() {
                                     name="allowRegistration" 
                                     type="checkbox"
                                     checkbox={!!allowRegistration}
-                                    onChange={this.allowRegistration}
+                                    onChange={this.allowRegistrationChange}
                                 />                                                   
                             </div>
                             <div className="form-group">
@@ -45,7 +45,7 @@ render() {
                                     name="disableBalanceOnEdit" 
                                     type="checkbox"
                                     checkbox={!!disableBalanceOnEdit}
-                                    onChange={this.disableBalanceOnEdit}
+                                    onChange={this.disableBalanceOnEditChange}
                                 />                                                   
                             </div>
                             <div className="form-group">
@@ -55,7 +55,7 @@ render() {
                                     name="disableBalanceOnAdd" 
                                     type="checkbox"
                                     checkbox={!!disableBalanceOnAdd}
-                                    onChange={this.disableBalanceOnAdd}
+                                    onChange={this.disableBalanceOnAddChange}
                                 />                                                   
                             </div>
                         </form>
