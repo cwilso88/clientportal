@@ -30,12 +30,33 @@ render() {
                         <form>
                             <div className="form-group">
                                 <label>Allow Registration</label>
+                                {' '}
                                 <input 
                                     name="allowRegistration" 
                                     type="checkbox"
                                     checkbox={!!allowRegistration}
                                     onChange={this.allowRegistration}
-                                />                              
+                                />                                                   
+                            </div>
+                            <div className="form-group">
+                                <label>Disable Balance On Edit</label>
+                                {' '}
+                                <input 
+                                    name="disableBalanceOnEdit" 
+                                    type="checkbox"
+                                    checkbox={!!disableBalanceOnEdit}
+                                    onChange={this.disableBalanceOnEdit}
+                                />                                                   
+                            </div>
+                            <div className="form-group">
+                                <label>Disable Balance On Add</label>
+                                {' '}
+                                <input 
+                                    name="disableBalanceOnAdd" 
+                                    type="checkbox"
+                                    checkbox={!!disableBalanceOnAdd}
+                                    onChange={this.disableBalanceOnAdd}
+                                />                                                   
                             </div>
                         </form>
                     </div>
