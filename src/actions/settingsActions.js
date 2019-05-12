@@ -1,9 +1,10 @@
 import { DISABLE_BALANCE_ON_ADD, 
         DISABLE_BALANCE_ON_EDIT, 
-        ALLOW_REGISTRATION }from '../actions/types';
-import { actionTypes } from 'redux-firestore';
+        ALLOW_REGISTRATION } from './types';
 
 
-import { DISABLE_BALANCE_ON_ADD, 
-    DISABLE_BALANCE_ON_EDIT, 
-    ALLOW_REGISTRATION }from '../actions/types';
+export const setDisableBalanceOnAdd = () => {
+    return {
+        type: DISABLE_BALANCE_ON_ADD
+    }
+}
