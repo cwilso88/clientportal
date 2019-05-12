@@ -10,6 +10,7 @@ import AddClient from './components/clients/AddClient';
 import ClientDetails from './components/clients/ClientDetails';
 import EditClient from './components/clients/EditClient';
 import Login from './components/auth/Login';
+import Settings from './components/settings/Settings';
 
 
 import './App.css';
@@ -26,6 +27,7 @@ function App() {
           <Route exact path="/client/add" component={UserIsAuthenticated(AddClient)}></Route>
           <Route exact path="/client/edit/:id" component={UserIsAuthenticated(EditClient)}></Route>
           <Route exact path="/client/:id" component={UserIsAuthenticated(ClientDetails)}></Route>
+          <Route exact path="/settings" component={UserIsAuthenticated(Settings)}></Route>
           <Route exact path="/login" component={UserIsNotAuthenticated(Login)}></Route>
         </Switch>
       </div>
