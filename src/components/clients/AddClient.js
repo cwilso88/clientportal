@@ -34,6 +34,8 @@ class AddClient extends Component {
     
 
   render() {
+    const { disableBalanceOnAdd } = this.props.settings;
+
     return (
       <div>
         <div className="row">
@@ -103,6 +105,7 @@ class AddClient extends Component {
                             name="balance"
                             onChange={this.onChange}
                             value={this.state.balance}
+                            disabled={disableBalanceOnAdd}
                         />
                     </div>
 

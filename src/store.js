@@ -48,19 +48,17 @@ const rrfConfig = {
     });
 
     // Check for settings in localStorage
-    if(localStorage.getItem('settings') === null) {
+    if(localStorage.getItem('settings') == null) {
         // Default Settings
-        const defaultSelttings = {
+        const defaultSettings = {
             disableBalanceOnAdd: true,
             disableBalanceOnEdit: false,
             allowRegistration: false
         }
 
         // Set to localStorage
-        localStorage.setItem('settings', JSON.stringify(defaultSelttings));
-    } else {
-
-    }
+        localStorage.setItem('settings', JSON.stringify(defaultSettings));
+    } 
     // Create initial state
     const initialState = {settings: JSON.parse(localStorage.getItem('settings'))};
 
