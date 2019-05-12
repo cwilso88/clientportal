@@ -63,7 +63,7 @@ onLogoutClick = (e) => {
                       </a>
                     </li>
                     <li className="nav-item">
-                      <Link to="/Settings" className="nav-link" component={Settings}>
+                      <Link to="/settings" className="nav-link">
                         <i className="fas fa-cog"></i> Settings
                       </Link>
                     </li>

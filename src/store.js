@@ -47,8 +47,22 @@ const rrfConfig = {
         settings: settingsReducer // <- needed if using firestore
     });
 
+    // Check for settings in localStorage
+    if(localStorage.getItem('settings') === null) {
+        // Default Settings
+        const defaultSelttings = {
+            disableBalanceOnAdd: true,
+            disableBalanceOnEdit: false,
+            allowRegistration: false
+        }
+
+        // Set to localStorage
+        localStorage.setItem('settings', JSON.stringify(defaultSelttings));
+    } else {
+
+    }
     // Create initial state
-    const initialState = {};
+    const initialState = {settings: JSON.parse(localStorage.getItem('settings'))};
 
     // Create store
     const store = createStoreWithFirebase(rootReducer, initialState, compose(reactReduxFirebase(firebase),
