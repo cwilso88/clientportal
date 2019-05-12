@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link } from 'react-route-dom';
+import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { allowRegistration,
@@ -20,6 +20,24 @@ render() {
                         <Link to="/" className="btn btn-link">
                             <i className="fas fa-arrow-circle-left"></i> Back To Dashboard
                         </Link>
+                    </div>
+                </div>
+                <div className="card">
+                    <div className="card-header">
+                        Edit Setting
+                    </div>
+                    <div className="card-body">
+                        <form>
+                            <div className="form-group">
+                                <label>Allow Registration</label>
+                                <input 
+                                    name="allowRegistration" 
+                                    type="checkbox"
+                                    checkbox={!!allowRegistration}
+                                    onChange={this.allowRegistration}
+                                />                              
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>
