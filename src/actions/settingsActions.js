@@ -8,3 +8,13 @@ export const setDisableBalanceOnAdd = () => {
         type: DISABLE_BALANCE_ON_ADD
     }
 }
+export const setDisableBalanceOnEdit = () => {
+    return {
+        type: DISABLE_BALANCE_ON_EDIT
+    }
+}
+export const allowRegistration = () => {
+    return {
+        type: ALLOW_REGISTRATION
+    }
+}
