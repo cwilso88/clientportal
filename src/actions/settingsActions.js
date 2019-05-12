@@ -26,13 +26,24 @@ export const setDisableBalanceOnEdit = () => {
 
     // Set back to localStorage
     localStorage.setItem('settings', JSON.stringify(settings));
+
     return {
-        type: DISABLE_BALANCE_ON_EDIT
+        type: DISABLE_BALANCE_ON_EDIT,
+        payload: settings.disableBalanceOnEdit
     }
 }
 export const allowRegistration = () => {
-    
+    // Get settings from localStorage
+    const settings = JSON.parse(localStorage.getItem('settings'));
+
+    // Toggle
+    settings.allowRegistration = !settings.allowRegistration;
+
+    // Set back to localStorage
+    localStorage.setItem('settings', JSON.stringify(settings));
+
     return {
-        type: ALLOW_REGISTRATION
+        type: ALLOW_REGISTRATION,
+        payload: settings.allowRegistration
     }
 }
