@@ -10,30 +10,25 @@ const initialState = {
     allowRegistration: false
 }
 
-export default function(state = initialState) {
+export default function(state = initialState, action) {
     switch(action.type) {
         case DISABLE_BALANCE_ON_ADD:
         return {
             ...state,
-            disableBalanceOnAdd: !disableBalanceOnAdd
+            disableBalanceOnAdd: !state.disableBalanceOnAdd
         };
-    }
-    switch(action.type) {
         case DISABLE_BALANCE_ON_EDIT:
         return {
             ...state,
-            disableBalanceOnEdit: !disableBalanceOnEdit
+            disableBalanceOnEdit: !state.disableBalanceOnEdit
         };
-    switch(action.type) {
         case ALLOW_REGISTRATION:
         return {
             ...state,
-            allowRegistration: !allowRegistration
+            allowRegistration: !state.allowRegistration
         };
+        default: 
+            return state;
     }
-  return (
-    <div>
-      
-    </div>
-  )
+    
 }
