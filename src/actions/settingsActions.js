@@ -4,6 +4,14 @@ import { DISABLE_BALANCE_ON_ADD,
 
 
 export const setDisableBalanceOnAdd = () => {
+    // Get settings from localStorage
+    const settings = JSON.parse(localStorage.getItem('settings'));
+
+    // Toggle
+    settings.setDisableBalanceOnAdd = !setDisableBalanceOnAdd;
+
+    // Set back to localStorage
+    localStorage.setItem('settings', JSON.stringify(settings));
     return {
         type: DISABLE_BALANCE_ON_ADD
     }
