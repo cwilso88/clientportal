@@ -8,6 +8,19 @@ import { allowRegistration,
         } from '../../actions/settingsActions';
 
 class Settings extends Component {
+
+    disableBalanceOnAddChange = () => {
+        const { setDisableBalanceOnAdd } = this.props;
+        setDisableBalanceOnAdd();
+    }
+    disableBalanceOnEditChange = () => {
+        const { setDisableBalanceOnEdit } = this.props;
+        setDisableBalanceOnEdit();
+    }
+    allowRegistrationChange = () => {
+        const { allowRegistration } = this.props;
+        allowRegistration();
+    }
 render() {
     const { 
         disableBalanceOnAdd, 
@@ -71,7 +84,7 @@ Settings.propTypes = {
     settings: PropTypes.object.isRequired,
     setDisableBalanceOnAdd: PropTypes.func.isRequired,
     setDisableBalanceOnEdit: PropTypes.func.isRequired,
-    setAllowRegistration: PropTypes.func.isRequired
+    allowRegistration: PropTypes.func.isRequired
 }
 
 export default connect((state, props) => ({

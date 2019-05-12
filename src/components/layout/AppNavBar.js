@@ -5,6 +5,7 @@ import { compose } from 'redux';
 import { connect } from 'react-redux';
 import { firebaseConnect } from 'react-redux-firebase';
 
+import Settings from '../settings/Settings';
 
 class AppNavBar extends Component {
   state = {
@@ -62,6 +63,11 @@ onLogoutClick = (e) => {
                       </a>
                     </li>
                     <li className="nav-item">
+                      <Link to="/Settings" className="nav-link" component={Settings}>
+                        <i className="fas fa-cog"></i> Settings
+                      </Link>
+                    </li>
+                    <li className="nav-item">
                       <a onClick={this.onLogoutClick} href="#!" className="nav-link">
                       Logout
                       </a>
@@ -77,12 +83,14 @@ onLogoutClick = (e) => {
 
 AppNavBar.propTypes = {
   firebase: PropTypes.object.isRequired,
-  auth: PropTypes.object.isRequired
+  auth: PropTypes.object.isRequired,
+  settings: PropTypes.object.isRequired
 }
 
 
 export default compose(firebaseConnect(),
   connect((state, props) => ({
-  auth: state.firebase.auth
+  auth: state.firebase.auth,
+  settings: state.settings
   }))
 )(AppNavBar);
