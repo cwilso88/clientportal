@@ -7,7 +7,7 @@ import { notifyUser } from '../../actions/notifyActions';
 import Alert from '../layout/Alert';
 
 
-class Login extends Component {
+class Register extends Component {
 
     state = {
         email: '',
@@ -24,12 +24,7 @@ class Login extends Component {
         const { firebase, notifyUser } = this.props;
         const { email, password } = this.state;
 
-        firebase
-            .login({
-                email,
-                password
-            })
-            .catch(err => notifyUser('Invalid Password or Email', 'error'));
+        // Register with firebase
     }
 
   render() {
@@ -45,7 +40,7 @@ class Login extends Component {
                     <h1 className="text-center pb-4 pt-3">
                         <span className="text-primary">
                             <i className="fas fa-lock"></i>
-                            {' '}Login
+                            {' '}Register
                         </span>
                     </h1>
                     <form onSubmit={this.onSubmit}>
@@ -84,7 +79,7 @@ class Login extends Component {
 }
 
 
-Login.propTypes = {
+Register.propTypes = {
     firebase: PropTypes.object.isRequired,
     notify: PropTypes.object.isRequired,
     notifyUser: PropTypes.object.isRequired
@@ -93,8 +88,8 @@ Login.propTypes = {
 export default compose(
     firebaseConnect(),
     connect((state, props) => ({
-        notify: state.notify,
+        notify: state.notify
         }), 
     {notifyUser}
     )
-)(Login);
+)(Register);
