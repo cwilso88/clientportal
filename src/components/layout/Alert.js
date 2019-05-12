@@ -14,7 +14,7 @@ import PropTypes from 'prop-types';
   )
 }
 
-Alert.PropTypes = {
+Alert.propTypes = {
     message: PropTypes.string.isRequired,
     messageType: PropTypes.string.isRequired
 }
