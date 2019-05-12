@@ -25,6 +25,7 @@ class Register extends Component {
         const { email, password } = this.state;
 
         // Register with firebase
+        firebase.createUser({ email, password }).catch(err => notifyUser('User Already Exsists', 'error'))
     }
 
   render() {
@@ -66,7 +67,7 @@ class Register extends Component {
                         </div>
                         <input 
                             type="submit"
-                            value="Login"
+                            value="Register"
                             className="btn btn-primary btn-block"
                         />
                     </form>
@@ -88,7 +89,8 @@ Register.propTypes = {
 export default compose(
     firebaseConnect(),
     connect((state, props) => ({
-        notify: state.notify
+        notify: state.notify,
+        settings: state.settings
         }), 
     {notifyUser}
     )
