@@ -82,4 +82,8 @@ Login.propTypes = {
     firebase: PropTypes.object.isRequired
 }
 
-export default firebaseConnect()(Login);
+export default compose(
+    connect((state, props) => ({
+        notify: state.notify
+    }))
+)(Login);
