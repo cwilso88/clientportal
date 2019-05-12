@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 import { compose } from 'redux';
 import { connect } from 'react-redux';
 import { firebaseConnect } from 'react-redux-firebase';
+import { notifyUser } from '../../actions/notifyActions';
+import Alert from '../layout/Alert';
 
 
 class Login extends Component {
@@ -19,7 +21,7 @@ class Login extends Component {
     onSubmit = e => {
         e.preventDefault();
 
-        const { firebase } = this.props;
+        const { firebase, notifyUser } = this.props;
         const { email, password } = this.state;
 
         firebase
@@ -27,7 +29,7 @@ class Login extends Component {
                 email,
                 password
             })
-            .catch(err => alert('Invalid Password  or Email'));
+            .catch(err => notifyUser('Invalid Password or Email', 'error'));
     }
 
   render() {
@@ -83,6 +85,7 @@ Login.propTypes = {
 }
 
 export default compose(
+    firebaseConnect(),
     connect((state, props) => ({
         notify: state.notify
     }))
