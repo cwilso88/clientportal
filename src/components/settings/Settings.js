@@ -8,11 +8,14 @@ import { setAllowRegistration,
         } from '../../actions/settingsActions';
 
 class Settings extends Component {
-  render() {
-    return (
-      <div>
+
+    const { disableBalanceOnAdd, disableBalanceOnEdit, allowRegistration } = this.props;
+    
+    render() {
+        return (
+            <div>
         
-      </div>
+            </div>
     )
   }
 }
