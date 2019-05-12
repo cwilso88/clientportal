@@ -6,6 +6,7 @@ import { reduxFirestore, firestoreReducer} from 'redux-firestore';
 
 //Reducers
 import notifyReducer from './reducers/notifyReducer';
+import settingsReducer from './reducers/settingsReducer';
 
 //@todo
 
@@ -42,7 +43,8 @@ const rrfConfig = {
     const rootReducer = combineReducers({
         firebase: firebaseReducer,
         firestore: firestoreReducer,
-        notify: notifyReducer // <- needed if using firestore
+        notify: notifyReducer,
+        settings: settingsReducer // <- needed if using firestore
     });
 
     // Create initial state
