@@ -22,11 +22,11 @@ class PasswordReset extends Component {
     onSubmit = e => {
         e.preventDefault();
 
-        const { firebase, auth, notifyUser } = this.props;
+        const { firebase, notifyUser } = this.props;
         const { email } = this.state;
          
 
-        auth
+        firebase
             .sendPasswordResetEmail({
                 email
             })
@@ -80,7 +80,7 @@ class PasswordReset extends Component {
 
 
 PasswordReset.propTypes = {
-    auth: PropTypes.object.isRequired,
+    firebase: PropTypes.object.isRequired,
     notify: PropTypes.object.isRequired,
     notifyUser: PropTypes.object.isRequired
 }
