@@ -40,8 +40,8 @@ class Clients extends Component {
                 </h2>
             </div>
             <div className="col-md-6">
-              <h5 className="text-right text-secondary">Total Owed {''}
-              <span className="text-primary">
+              <h5 style={{color:"#73726D"}} className="text-right">Total Owed = {''}
+              <span style={{ color:"#E24B2C" }}>
                 ${parseFloat(totalOwed).toFixed(2)}
               </span></h5>
             </div>
@@ -62,7 +62,7 @@ class Clients extends Component {
                   <td>{client.email}</td>
                   <td>${parseFloat(client.balance).toFixed(2)}</td>
                   <td>
-                    <Link to={`/client/${client.id}`} className="btn btn-secondary btn-sm">
+                    <Link to={`/client/${client.id}`} style={{ backgroundColor: "#3D3331" }} className="btn btn-secondary btn-sm">
                       <i className="fas fa-arrow-circle-right"> Details</i>
                     </Link>
                   </td>
