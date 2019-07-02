@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 export default () => {
   return (
-    <Link to="/client/add" className="btn btn-success btn-block">
+    <Link to="/client/add" style={{ backgroundColor:"#61A598" }} className="btn btn-block">
         <i className="fas fa-plus"></i> New
     </Link>
   )

@@ -4,6 +4,7 @@ import  { UserIsAuthenticated, UserIsNotAuthenticated } from './helpers/auth';
 
 import { Provider } from 'react-redux';
 import store from './store';
+
 import AppNavbar from './components/layout/AppNavBar';
 import Dashboard from './components/layout/Dashboard';
 import AddClient from './components/clients/AddClient';

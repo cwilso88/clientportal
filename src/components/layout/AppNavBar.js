@@ -34,10 +34,10 @@ onLogoutClick = (e) => {
     const { auth } = this.props;
     const { allowRegistration } = this.props.settings;
     return (
-      <nav className="navbar navbar-expand-md navbar-dark bg-primary mb-4">
+      <nav className="navbar navbar-expand-md navbar-dark mb-4">
           <div className="container">
-            <Link to="/" className="navbar-brand">
-                ClientPanel
+            <Link to="/" style={{ color:"#3D3331" }} className="navbar-brand">
+                <span>NetAirSys</span> client portal
             </Link>
             <button 
             className="navbar-toggler"
@@ -46,7 +46,7 @@ onLogoutClick = (e) => {
             data-target="#navbarMain">
                 <span className="navbar-toggler-icon"></span>
           </button>
-          <div className="collapse navbar-collapse" id="navbarMain">
+          <div className="collapse navbar-collapse m-3" id="navbarMain">
             <ul className="navbar-nav mr-auto">
             {isAuthenticated ? (
               <li className="nav-item">
