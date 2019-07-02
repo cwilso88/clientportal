@@ -53,10 +53,10 @@ class Login extends Component {
                     {message ? (
                         <Alert message={message} messageType={messageType}/>
                         ) : null}
-                        <h3 style={{ color: "#3D3331"}} className="text-center pt-3">Welcome back!</h3>
+                        <h4 className="text-center pt-3">Welcome back!</h4>
                         <hr/>
                     <h4 className="text-center pb-4 pt-3">
-                        <span id="colorGreenText">
+                        <span>
                             <i style={{ color: "#DDD5A4"}} className="fas fa-lock mr-2"></i>
                             {' '}Log in to your account
                         </span>
