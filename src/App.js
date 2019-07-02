@@ -13,6 +13,7 @@ import EditClient from './components/clients/EditClient';
 import Login from './components/auth/Login';
 import Register from './components/auth/Register';
 import Settings from './components/settings/Settings';
+import PasswordReset from './components/auth/PasswordRest';
 
 
 import './App.css';
@@ -32,6 +33,7 @@ function App() {
           <Route exact path="/client/:id" component={UserIsAuthenticated(ClientDetails)}></Route>
           <Route exact path="/settings" component={UserIsAuthenticated(Settings)}></Route>
           <Route exact path="/login" component={UserIsNotAuthenticated(Login)}></Route>
+          <Route exact path="/reset" component={UserIsNotAuthenticated(PasswordReset)}></Route>
         </Switch>
       </div>
     </div>

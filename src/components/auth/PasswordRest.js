@@ -33,6 +33,16 @@ class Login extends Component {
             .catch(err => notifyUser('Invalid Password or Email', 'error'));
     }
 
+    onForgotPassword = () => {
+        const { firebase } = this.props;
+        const { email } = this.state;
+
+        firebase
+            .sendPasswordResetEmail({
+                email
+            })
+    }
+
   render() {
       const { message, messageType } = this.props.notify;
     return (
@@ -43,12 +53,10 @@ class Login extends Component {
                     {message ? (
                         <Alert message={message} messageType={messageType}/>
                         ) : null}
-                        <h4 className="text-center pt-3">Welcome back!</h4>
-                        <hr/>
                     <h4 className="text-center pb-4 pt-3">
                         <span>
                             <i style={{ color: "#DDD5A4"}} className="fas fa-lock mr-2"></i>
-                            {' '}Log in to your account
+                            {' '}Reset your password
                         </span>
                     </h4>
                     <form onSubmit={this.onSubmit}>
@@ -80,7 +88,7 @@ class Login extends Component {
                         />
                         <div className="text-center p-3">
                             <span>or</span>
-                            <Link className="pl-2" to="/reset">Forgot password</Link>
+                            <Link onClick={this.onForgotPassword} className="pl-2" to="#">Forgot password</Link>
                         </div>
                     </form>
                 </div>
