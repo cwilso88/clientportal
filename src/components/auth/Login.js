@@ -4,6 +4,7 @@ import { compose } from 'redux';
 import { connect } from 'react-redux';
 import { firebaseConnect } from 'react-redux-firebase';
 import { notifyUser } from '../../actions/notifyActions';
+import { Link } from 'react-router-dom';
 import Alert from '../layout/Alert';
 
 
@@ -42,10 +43,11 @@ class Login extends Component {
                     {message ? (
                         <Alert message={message} messageType={messageType}/>
                         ) : null}
-                        <h3 className="text-center pt-3">Welcome back!</h3>
+                        <h3 style={{ color: "#3D3331"}} className="text-center pt-3">Welcome back!</h3>
+                        <hr/>
                     <h4 className="text-center pb-4 pt-3">
                         <span id="colorGreenText">
-                            <i className="fas fa-lock"></i>
+                            <i style={{ color: "#DDD5A4"}} className="fas fa-lock mr-2"></i>
                             {' '}Log in to your account
                         </span>
                     </h4>
@@ -76,6 +78,10 @@ class Login extends Component {
                             className="btn btn-primary btn-block"
                             id="colorGreen"
                         />
+                        <div className="text-center p-3">
+                            <span>or</span>
+                            <Link className="pl-2" to="#">Forgot password</Link>
+                        </div>
                     </form>
                 </div>
             </div>
