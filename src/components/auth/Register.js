@@ -38,8 +38,11 @@ class Register extends Component {
                     {message ? (
                         <Alert message={message} messageType={messageType}/>
                         ) : null}
-                    <h1 className="text-center pb-4 pt-3">
-                        <span className="text-primary">
+
+                    <h2>Create an account</h2>
+                        <hr/>
+                    <h1 id="colorGreenText" className="text-center pb-4 pt-3">
+                        <span>
                             <i className="fas fa-lock"></i>
                             {' '}Register
                         </span>
@@ -68,7 +71,8 @@ class Register extends Component {
                         <input 
                             type="submit"
                             value="Register"
-                            className="btn btn-primary btn-block"
+                            className="btn btn-block"
+                            id="colorGreen"
                         />
                     </form>
                 </div>

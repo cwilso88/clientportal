@@ -37,7 +37,7 @@ onLogoutClick = (e) => {
       <nav className="navbar navbar-expand-md navbar-dark mb-4">
           <div className="container">
             <Link to="/" style={{ color:"#3D3331" }} className="navbar-brand">
-                <span>NetAirSys</span> client portal
+                <span>NetAirSys</span> client directory
             </Link>
             <button 
             className="navbar-toggler"

@@ -18,6 +18,7 @@ table thead tr {
 #colorGreen {
     background-color: #61A598;
     border: #61A598;
+    color: white;
 }
 
 #colorGreenText {
