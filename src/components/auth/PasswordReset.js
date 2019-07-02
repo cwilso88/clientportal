@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom';
 import Alert from '../layout/Alert';
 
 
-class Login extends Component {
+class PasswordReset extends Component {
 
     state = {
         email: '',
@@ -22,25 +22,15 @@ class Login extends Component {
     onSubmit = e => {
         e.preventDefault();
 
-        const { firebase, notifyUser } = this.props;
-        const { email, password } = this.state;
-
-        firebase
-            .login({
-                email,
-                password
-            })
-            .catch(err => notifyUser('Invalid Password or Email', 'error'));
-    }
-
-    onForgotPassword = () => {
-        const { firebase } = this.props;
+        const { firebase, auth, notifyUser } = this.props;
         const { email } = this.state;
+         
 
-        firebase
+        auth
             .sendPasswordResetEmail({
                 email
             })
+            .catch(err => notifyUser('Invalid email', 'error'));
     }
 
   render() {
@@ -89,8 +79,8 @@ class Login extends Component {
 }
 
 
-Login.propTypes = {
-    firebase: PropTypes.object.isRequired,
+PasswordReset.propTypes = {
+    auth: PropTypes.object.isRequired,
     notify: PropTypes.object.isRequired,
     notifyUser: PropTypes.object.isRequired
 }
@@ -102,4 +92,4 @@ export default compose(
         }), 
     {notifyUser}
     )
-)(Login);
+)(PasswordReset);

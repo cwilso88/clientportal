@@ -13,7 +13,7 @@ import EditClient from './components/clients/EditClient';
 import Login from './components/auth/Login';
 import Register from './components/auth/Register';
 import Settings from './components/settings/Settings';
-import PasswordReset from './components/auth/PasswordRest';
+import PasswordReset from './components/auth/PasswordReset';
 
 
 import './App.css';
