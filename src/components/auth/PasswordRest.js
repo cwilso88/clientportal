@@ -53,14 +53,12 @@ class Login extends Component {
                     {message ? (
                         <Alert message={message} messageType={messageType}/>
                         ) : null}
-                    <h4 className="text-center pb-4 pt-3">
-                        <span>
-                            <i style={{ color: "#DDD5A4"}} className="fas fa-lock mr-2"></i>
-                            {' '}Reset your password
-                        </span>
+                    <h4 className="pb-3">
+                        Forgot your password
                     </h4>
+                    <hr/>
                     <form onSubmit={this.onSubmit}>
-                        <div className="form-group">
+                        <div className="form-group pt-4">
                             <label htmlFor="email">Email</label>
                             <input 
                                 type="text" 
@@ -70,25 +68,16 @@ class Login extends Component {
                                 //value={this.state.email}
                                 onChange={this.onChange}
                             />
-                            <label htmlFor="password">Password</label>
-                            <input 
-                                type="password" 
-                                className="form-control" 
-                                name="password"
-                                required
-                                //value={this.state.password}
-                                onChange={this.onChange}
-                            />
                         </div>
                         <input 
                             type="submit"
-                            value="Login"
+                            value="Reset password"
                             className="btn btn-primary btn-block"
                             id="colorGreen"
                         />
                         <div className="text-center p-3">
                             <span>or</span>
-                            <Link onClick={this.onForgotPassword} className="pl-2" to="#">Forgot password</Link>
+                            <Link className="pl-2" to="/login">Login</Link>
                         </div>
                     </form>
                 </div>
