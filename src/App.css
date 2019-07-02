@@ -14,3 +14,12 @@ table thead tr {
 #backToDashboard {
     color: #61A598;
 }
+
+#colorGreen {
+    background-color: #61A598;
+    border: #61A598;
+}
+
+#colorGreenText {
+    color: #61A598;
+}

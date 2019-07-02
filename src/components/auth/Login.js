@@ -42,12 +42,13 @@ class Login extends Component {
                     {message ? (
                         <Alert message={message} messageType={messageType}/>
                         ) : null}
-                    <h1 className="text-center pb-4 pt-3">
-                        <span className="text-primary">
+                        <h3 className="text-center pt-3">Welcome back!</h3>
+                    <h4 className="text-center pb-4 pt-3">
+                        <span id="colorGreenText">
                             <i className="fas fa-lock"></i>
-                            {' '}Login
+                            {' '}Log in to your account
                         </span>
-                    </h1>
+                    </h4>
                     <form onSubmit={this.onSubmit}>
                         <div className="form-group">
                             <label htmlFor="email">Email</label>
@@ -73,6 +74,7 @@ class Login extends Component {
                             type="submit"
                             value="Login"
                             className="btn btn-primary btn-block"
+                            id="colorGreen"
                         />
                     </form>
                 </div>
