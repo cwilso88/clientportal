@@ -26,11 +26,7 @@ class PasswordReset extends Component {
         const { email } = this.state;
          
 
-        firebase
-            .sendPasswordResetEmail({
-                email
-            })
-            .catch(err => notifyUser('Invalid email', 'error'));
+        firebase.auth().sendPasswordResetEmail(email).catch(err => notifyUser('Invalid email', 'error'));
     }
 
   render() {
