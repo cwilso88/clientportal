@@ -39,14 +39,14 @@ class Register extends Component {
                         <Alert message={message} messageType={messageType}/>
                         ) : null}
 
-                    <h2>Create an account</h2>
+                    <h5>Create an account</h5>
                         <hr/>
-                    <h1 id="colorGreenText" className="text-center pb-4 pt-3">
+                    <h5 className="text-center pb-4 pt-3">
                         <span>
-                            <i className="fas fa-lock"></i>
-                            {' '}Register
+                            <i id="colorGreenText" className="fas fa-lock"></i>
+                            {' '}You will need an account to get to the client directory list
                         </span>
-                    </h1>
+                    </h5>
                     <form onSubmit={this.onSubmit}>
                         <div className="form-group">
                             <label htmlFor="email">Email</label>
