@@ -46,9 +46,9 @@ class EditClient extends Component {
         <div>
         <div className="row">
             <div className="col-md-6">
-                <Link to="/" className="btn btn-link">
-                    <i className="fas fa-arrow-circle-left"></i>
-                        Back To Dashboard
+                <Link to="/" className="btn btn-link" id="backToDashboard">
+                    <i className="fas fa-arrow-circle-left"></i>  
+                      Back To Dashboard
                 </Link>
             </div>
         </div>

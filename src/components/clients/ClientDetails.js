@@ -79,7 +79,7 @@ class ClientDetails extends Component {
             <div>
               <div className="row">
                   <div className="col-md-6">
-                      <Link to="/" className="btn btn-link">
+                      <Link to="/" className="btn btn-link" id="backToDashboard">
                           <i className="fas fa-arrow-circle-left"></i> Back to Dashboard
                       </Link>
                   </div>
@@ -113,7 +113,7 @@ class ClientDetails extends Component {
                                   <a href="#!" onClick={() => this.setState({
                                    showBalanceUpdate: !this.state.showBalanceUpdate   
                                   })}> 
-                                      <i className="fas fa-pencil-alt"></i>
+                                      <i style={{ color:"#61A598" }} className="fas fa-pencil-alt"></i>
                                   </a>
                               </small>
                             </h3>
