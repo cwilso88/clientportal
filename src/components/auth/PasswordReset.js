@@ -27,6 +27,10 @@ class PasswordReset extends Component {
          
 
         firebase.auth().sendPasswordResetEmail(email).catch(err => notifyUser('Invalid email', 'error'));
+
+        this.input.value = '';
+
+
     }
 
   render() {
