@@ -6,6 +6,7 @@ import { firebaseConnect } from 'react-redux-firebase';
 import { notifyUser } from '../../actions/notifyActions';
 import { Link } from 'react-router-dom';
 import Alert from '../layout/Alert';
+import history from '../../helpers/history';
 
 
 class PasswordReset extends Component {
@@ -26,12 +27,17 @@ class PasswordReset extends Component {
         const { email } = this.state;
          
 
-        firebase.auth().sendPasswordResetEmail(email).catch(err => notifyUser('Invalid email', 'error'));
+        firebase.auth()
+            .sendPasswordResetEmail(email)
+            .then(notifyUser('Check your email to complete password reset', 'success'))
+            .catch(err => notifyUser('Invalid email', 'error'));
+    };
 
-        this.input.value = '';
-
-
-    }
+    onSubmitReset = () =>
+        this.setState({
+            [this.state.email.value]: ''
+        });
+    
 
   render() {
       const { message, messageType } = this.props.notify;
@@ -55,7 +61,7 @@ class PasswordReset extends Component {
                                 className="form-control" 
                                 name="email"
                                 required
-                                //value={this.state.email}
+                                value={this.state.email}
                                 onChange={this.onChange}
                             />
                         </div>
@@ -64,6 +70,7 @@ class PasswordReset extends Component {
                             value="Reset password"
                             className="btn btn-primary btn-block"
                             id="colorGreen"
+                            onSubmit={this.onSubmitReset}
                         />
                         <div className="text-center p-3">
                             <span>or</span>
