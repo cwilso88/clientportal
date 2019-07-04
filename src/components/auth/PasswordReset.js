@@ -29,7 +29,7 @@ class PasswordReset extends Component {
 
         firebase.auth()
             .sendPasswordResetEmail(email)
-            .then(notifyUser('Check your email to complete password reset', 'success'))
+            .then(notifyUser('The password reset link was sent to this email', 'success'))
             .catch(err => notifyUser('Invalid email', 'error'));
     };
 
