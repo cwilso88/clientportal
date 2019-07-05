@@ -37,7 +37,7 @@ render() {
                 </div>
                 <div className="card">
                     <div className="card-header">
-                        Edit Setting
+                        Edit Settings
                     </div>
                     <div className="card-body">
                         <form>

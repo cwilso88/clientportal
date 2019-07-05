@@ -82,6 +82,10 @@ class Login extends Component {
                             <span>or</span>
                             <Link className="pl-2" to="/reset">Forgot password</Link>
                         </div>
+                        <div className="text-center p-3">
+                            <span>or</span>
+                            <Link className="pl-2" to="/register">Create an account</Link>
+                        </div>
                     </form>
                 </div>
             </div>

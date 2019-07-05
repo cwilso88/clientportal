@@ -38,6 +38,7 @@ class Clients extends Component {
                 {' '}
                 <i style={{ color:"#DDD5A4"}} className="fas fa-users"></i>{' '} Clients
                 </h2>
+                <p>View client details, add clients, or update account settings.</p>
             </div>
             <div className="col-md-6">
               <h5 style={{color:"#73726D"}} className="text-right">Total Owed = {''}

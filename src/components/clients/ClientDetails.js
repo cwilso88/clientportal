@@ -82,6 +82,7 @@ class ClientDetails extends Component {
                       <Link to="/" className="btn btn-link" id="backToDashboard">
                           <i className="fas fa-arrow-circle-left"></i> Back to Dashboard
                       </Link>
+                      <p className="pt-3">Edit client balance, delete client from directory, or update client details.</p>
                   </div>
                   <div className="col-md-6">
                       <div className="btn-group float-right">

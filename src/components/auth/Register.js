@@ -44,7 +44,7 @@ class Register extends Component {
                     <h5 className="text-center pb-4 pt-3">
                         <span>
                             <i id="colorGreenText" className="fas fa-lock"></i>
-                            {' '}You will need an account to get to the client directory list
+                            {' '}You will need an account access the client directory list
                         </span>
                     </h5>
                     <form onSubmit={this.onSubmit}>

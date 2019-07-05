@@ -44,12 +44,13 @@ class EditClient extends Component {
     if(client) {
         return (
         <div>
-        <div className="row">
+        <div className="row pb-2">
             <div className="col-md-6">
                 <Link to="/" className="btn btn-link" id="backToDashboard">
                     <i className="fas fa-arrow-circle-left"></i>  
                       Back To Dashboard
                 </Link>
+                <p className="pt-3">Click on the field below to update client details.</p>
             </div>
         </div>
         
