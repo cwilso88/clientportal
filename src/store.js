@@ -53,7 +53,7 @@ const rrfConfig = {
         const defaultSettings = {
             disableBalanceOnAdd: true,
             disableBalanceOnEdit: false,
-            allowRegistration: false
+            allowRegistration: true
         }
 
         // Set to localStorage
